@@ -8,11 +8,13 @@ import { RegisterComponent } from './LOGIN/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesign } from './material/material';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+  
   ],
   imports: [
     BrowserModule,
