@@ -11,7 +11,15 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logout()
+  {
+    let conf=confirm('Keluar aplikasi?');
+    if(conf)
+    {
+      localStorage.removeItem('appToken');
+      window.location.reload();
+    }
+  }
   menu=[
     {
       name:'Dashboard',
