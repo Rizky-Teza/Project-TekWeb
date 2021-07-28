@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MaterialDesign } from '../material/material';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductComponent } from './product/product.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FormsModule } from '@angular/forms';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 
 const routes: Routes = [
   {
@@ -11,30 +14,33 @@ const routes: Routes = [
     component:AdminComponent,
     children:[
       {
-        path:'dashboard',
-        component:DashboardComponent
+        path:'product',
+        component:ProductComponent
       },
       {
         path:'',
-        redirectTo:'/admin/dashboard',
-        pathMatch:'full'
+        pathMatch:'full',
+        redirectTo:'/admin/product'
       }
     ]
-  },
-  
+  }
+
 ]
 
-
 @NgModule({
-  declarations: 
-  [AdminComponent,
-   DashboardComponent,
+  declarations: [
+    AdminComponent,
+    ProductComponent,
+    ProductDetailComponent,
+    FileUploaderComponent
   ],
   entryComponents:[ ],
   imports: [
-    CommonModule,
+    CommonModule,  
     RouterModule.forChild(routes),
     MaterialDesign,
+    FormsModule
   ]
-})
-export class AdminModule { }
+ })
+ export class AdminModule { }
+ 
