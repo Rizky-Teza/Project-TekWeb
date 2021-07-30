@@ -3,20 +3,24 @@
  </h3>
  <div mat-dialog-content>
     <mat-form-field appearance="outline" style="width: 100%;">
-        <mat-label>Judul Lagu</mat-label>
+        <mat-label>Judul Film</mat-label>
         <input matInput [(ngModel)]="data.title">      
     </mat-form-field>
     <mat-form-field appearance="outline" style="width: 100%;">
-        <mat-label>Penyanyi</mat-label>
-        <input matInput [(ngModel)]="data.author" >     
+        <mat-label>Genre</mat-label>
+        <input matInput [(ngModel)]="data.genre" >     
     </mat-form-field>
     <mat-form-field appearance="outline" style="width: 100%;">
-        <mat-label>Penerbit</mat-label>
-        <input matInput [(ngModel)]="data.publisher" >     
+        <mat-label>Release</mat-label>
+        <input matInput [(ngModel)]="data.release" >     
     </mat-form-field>
     <mat-form-field appearance="outline" style="width: 100%;">
-        <mat-label>Tahun Terbit</mat-label>
-        <input matInput [(ngModel)]="data.year" >     
+        <mat-label>Director</mat-label>
+        <input matInput [(ngModel)]="data.director" >     
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Link Download</mat-label>
+        <input matInput [(ngModel)]="data.link" >     
     </mat-form-field>
  </div>
  <div mat-dialog-actions align="end">

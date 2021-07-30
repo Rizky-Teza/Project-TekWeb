@@ -6,7 +6,6 @@ import { MaterialDesign } from '../material/material';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
-import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 
 const routes: Routes = [
   {
@@ -32,7 +31,6 @@ const routes: Routes = [
     AdminComponent,
     ProductComponent,
     ProductDetailComponent,
-    FileUploaderComponent
   ],
   entryComponents:[ ],
   imports: [

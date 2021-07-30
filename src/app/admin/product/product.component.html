@@ -1,39 +1,36 @@
-<div *ngIf="loading" style="height: 300px;" class="ui-flex uk-flex-center uk-flex-middle">
+<div *ngIf="loading" style="height: 300px;" class="uk-flex uk-flex-center uk-flex-middle">
     <mat-spinner></mat-spinner>
 </div>
 
-<mat-card *ngIf='!loading'>
+<mat-card *ngIf="!loading">
+    <mat-card-header>
+        <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
     <mat-card-content>
         <div class="uk-flex">
             <span class="uk-width-expand"></span>
-            <button mat-flat-button color="primary" (click)="productDetail({},-1)">Tambah Lagu</button>
+            <button mat-flat-button color="primary"  (click)="productDetail({},-1)">Tambahkan Film</button>
         </div>
         <table class="uk-table uk-table-middle uk-table-divider">
-            <thead>      
-                <th></th>          
+            <thead>          
                 <th>No</th>
-                <th>Judul Lagu</th>
-                <th>Penyanyi</th>
-                <th>Penerbit</th>
-                <th>Tahun Terbit</th>
-                <th align="right">#</th>
+                <th>Judul Film</th>
+                <th>Genre</th>
+                <th>Release</th>
+                <th>Director</th>
+                <th>Link Download</th>
             </thead>
             <tbody>
-                <tr *ngFor="let book of books; let idx=index">
-                    <td>
-                        <button mat-icon-button (click)="downloadFile(book)" *ngIf="book.url != ''">
-                            <mat-icon>download</mat-icon>
-                        </button>
-                    </td>
+                <tr *ngFor="let musik of music; let idx=index">
                     <td>{{idx+1}}</td>
-                    <td>{{book.title}}</td>
-                    <td>{{book.author}}</td>
-                    <td>{{book.publisher}}</td>
-                    <td>{{book.year}}</td>
+                    <td>{{musik.title}}</td>
+                    <td>{{musik.genre}}</td>
+                    <td>{{musik.release}}</td>
+                    <td>{{musik.director}}</td>
+                    <td>{{musik.link}}</td>
                     <td align="right">
-                        <button mat-button color="primary" (click)="uploadFile(book)">Upload</button>
-                        <button mat-button color="primary" (click)="productDetail(book,idx)">Edit</button>
-                        <button mat-button color="warn" (click)="deleteProduct(book.id,idx)" [disabled]="loadingDelete[idx]">{{loadingDelete[idx] ? 'Menghapus..':'Delete'}}</button>
+                        <button mat-button color="primary" (click)="productDetail(musik,idx)">Edit</button>
+                        <button mat-button color="warn" (click)="deleteProduct(musik.id,idx)" [disabled]="loadingDelete[idx]">{{loadingDelete[idx] ? 'Menghapus..':'Delete'}}</button>
                     </td>
                 </tr>
             </tbody>
